@@ -1,0 +1,65 @@
+using System;
+
+namespace ejercicio16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+         Console.WriteLine("Factorial no Recursivo: ");
+         foreach(string st in args){
+           // Console.WriteLine(st);
+            Console.WriteLine();
+            Console.WriteLine($"Factorial de {st} : "); 
+            Console.WriteLine(facNoRecursivo(int.Parse(st))); 
+            Console.WriteLine();
+         }
+        Console.WriteLine("-----------------------------------");
+         Console.WriteLine("Factorial Recursivo: ");
+         foreach(string st in args){
+            //Console.WriteLine(st);
+            Console.WriteLine();
+            Console.WriteLine($"Factorial de {st} : "); 
+            Console.WriteLine(facRecursivo(int.Parse(st))); 
+            Console.WriteLine();
+         }
+        Console.WriteLine("-----------------------------------");
+         Console.WriteLine("Factorial Recursivo 2 : ");
+         foreach(string st in args){
+            //Console.WriteLine(st);
+            Console.WriteLine();
+            Console.WriteLine($"Factorial de {st} : "); 
+            Console.WriteLine(facRecursivo2(int.Parse(st))); 
+            Console.WriteLine();
+         }
+
+        static int facNoRecursivo(int n){
+                int num  =1; 
+            for (int i = 2; i <= n; i++){
+                num= num * i; 
+            }
+            return num; 
+        }
+
+        static int facRecursivo(int n){
+            int num = 1; 
+            if (n >=1 ){
+                num =  facRecursivo(n-1);
+                num = n * num; 
+               
+            }
+            return num; 
+        }
+
+        static int facRecursivo2 (int n) => (n<2)? 1 : n * facRecursivo2(n-1);  
+
+
+
+
+
+        Console.ReadLine(); 
+        }
+    }
+}
