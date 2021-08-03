@@ -1,0 +1,57 @@
+using System;
+
+namespace ejercicio17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello World!");
+            int salida; 
+            Console.WriteLine("Factorial no Recursivo: ");
+            foreach(string st in args){
+                // Console.WriteLine(st);
+                Console.WriteLine();
+                Console.WriteLine($"Factorial de {st} : "); 
+                facNoRecursivo(int.Parse(st), out salida);
+                Console.WriteLine(salida); 
+                Console.WriteLine();
+         }
+        Console.WriteLine("-----------------------------------");
+         Console.WriteLine("Factorial Recursivo: ");
+         foreach(string st in args){
+            //Console.WriteLine(st);
+            Console.WriteLine();
+            Console.WriteLine($"Factorial de {st} : "); 
+            facRecursivo(int.Parse(st), out salida);
+            Console.WriteLine(salida); 
+            Console.WriteLine();
+         }
+       
+
+
+
+
+        //. Ídem. al ejercicio 16.a) y 16.b) pero devolviendo el resultado en un parámetro de salida
+
+        static void facNoRecursivo(int n, out int f)  {
+                f = 1; 
+                for (int i = 2; i <= n; i++){
+                 f = f * i; 
+                }
+             
+        }
+         static void facRecursivo(int n, out int f){
+             f = 1; 
+            if (n >=1 ){
+                facRecursivo(n-1, out f);
+                f = n * f; 
+               
+            }
+    
+        }
+  
+            Console.ReadLine(); 
+        }
+    }
+}
