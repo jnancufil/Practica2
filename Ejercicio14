@@ -1,0 +1,46 @@
+//**Implementar un programa que muestre todos los números primos entre 1 y un número natural
+//dado (pasado al programa como argumento por la línea de comandos). Definir el método
+//static bool esPrimo(int n) que devuelve ​true sólo si ​n es primo. Esta función debe
+//comprobar si ​n es divisible por algún número entero entre 2 y la raíz cuadrada de ​n​. (Nota:
+//Math.sqrt(d)​ devuelve la raíz cuadrada de​ d​)
+//*/
+using System;
+ 
+namespace ejercicio14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+           
+            foreach (string st in args){
+                 
+                Console.WriteLine(st); 
+                if (esPrimo(int.Parse(st))){
+                    Console.WriteLine("'Es Primo.-'"); 
+                }
+                else{
+                    Console.WriteLine("'No es Primo.-'"); 
+                }
+            }
+
+            static bool esPrimo(int n){
+            double aux = Math.Sqrt(n); 
+            int i = 2; 
+        
+            bool ok = true; 
+            while ((i <= aux) & (ok)){
+                if ((n % i)== 0) {ok= false; }
+                i++; 
+            }
+            return ok; 
+        }
+
+    
+        Console.ReadLine();
+
+        }
+        
+    }
+}
